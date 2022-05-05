@@ -3,7 +3,7 @@ import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import {promises} from "dns";
-import {User} from "./entities/user.entity";
+import {Users} from "./entities/user.entity";
 
 @Controller('users')
 export class UsersController {
@@ -18,7 +18,7 @@ export class UsersController {
   async findAll(){
     const users = await this.usersService.findAll();
     console.log(users);
-    return "results: " + users;
+    return "results: " + users.toString();
 
   }
 
